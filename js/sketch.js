@@ -160,12 +160,11 @@ function getCurrentTrack() {
 }
 
 function setup() {
-  var canvas = createCanvas(400,400)
+  var canvas = createCanvas(500,500)
   canvas.parent(mySketch)
 
 }
 
 function draw() {
-  background(255)
-  
+  background(int(tempo))
 }

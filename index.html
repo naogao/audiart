@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/sketch.css">
   </head>
   <body>
-    <a href="#" id="authenticate">Authorise Spotify</a>
+    <a href="#" id="authenticate">Authorize Spotify</a>
     <header>
       <input type="text" id="searchBox">
       <button id="searchButton" onclick="searchForSong()">Search</button>
@@ -22,17 +22,12 @@
     <section id="info">
       <h1 id="name"></h1>
       <h2 id="artist"></h2>
-      <pre>
-Song Key: Hue                         =
-Song Valence/Happiness: Saturation    =
-Song Energy: Luminance/Brightness     =
-Song Energy: No. of Lines             =
-Song Tempo: Radius                    =</pre>
+   
 
     </section>
     <script type="text/javascript">
     var authURL = "https://accounts.spotify.com/authorize?client_id=865f5b5b201c4f16ba15284057e4f26b&response_type=token&scope=user-read-currently-playing"
-    var authRedirect = "&redirect_uri=" + encodeURIComponent("https://adrianfranzese.github.io/P5_plus_Spotify/")
+    var authRedirect = "&redirect_uri=" + encodeURIComponent("https://github.com/naogao/audiart")
 
     document.getElementById("authenticate").href = authURL + authRedirect
     </script>
