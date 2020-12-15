@@ -27,9 +27,8 @@
     </section>
     <script type="text/javascript">
     var authURL = "https://accounts.spotify.com/authorize?client_id=128504fd07d845b780479d7855623841&response_type=token&scope=user-read-currently-playing"
+    
     var authRedirect = "&redirect_uri=" + encodeURIComponent("https://naogao.github.io/audiart/")
-
-    //var authRedirect = "&redirect_uri=" + encodeURIComponent("https://naogao.github.io/audiart/")
 
     document.getElementById("authenticate").href = authURL + authRedirect
     </script>
