@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Music + Colour</title>
+    <script type="text/javascript" src="js/spotify.js"></script>
+    <script type="text/javascript" src="js/p5.min.js" ></script>
+    <script type="text/javascript" src="js/p5.dom.js"></script>
+    <script type="text/javascript" src="js/sketch.js"></script>
+    <link rel="stylesheet" href="css/sketch.css">
+  </head>
+  <body>
+    <a href="#" id="authenticate">Authorise Spotify</a>
+    <header>
+      <input type="text" id="searchBox">
+      <button id="searchButton" onclick="searchForSong()">Search</button>
+      <button id="currentTrack" onclick="getCurrentTrack()">Get currently playing</button>
+    </header>
+
+    <section id="mySketch"></section>
+
+    <section id="info">
+      <h1 id="name"></h1>
+      <h2 id="artist"></h2>
+      <pre>
+Song Key: Hue                         =
+Song Valence/Happiness: Saturation    =
+Song Energy: Luminance/Brightness     =
+Song Energy: No. of Lines             =
+Song Tempo: Radius                    =</pre>
+
+    </section>
+    <script type="text/javascript">
+    var authURL = "https://accounts.spotify.com/authorize?client_id=865f5b5b201c4f16ba15284057e4f26b&response_type=token&scope=user-read-currently-playing"
+    var authRedirect = "&redirect_uri=" + encodeURIComponent("https://adrianfranzese.github.io/P5_plus_Spotify/")
+
+    document.getElementById("authenticate").href = authURL + authRedirect
+    </script>
+  </body>
+</html>

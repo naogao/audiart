@@ -1,0 +1,35 @@
+body {
+  font-family: 'Helvetica', san-serif;
+  margin: 0;
+  margin-top: 2em;
+  margin-left: 2em;
+  overflow: hidden;
+}
+
+#authenticate {
+  display: block;
+  margin-bottom: 1em;
+}
+
+#currentTrack {
+  margin-left: 2em;
+}
+
+header {
+  clear: all;
+}
+
+section {
+  float: left;
+  margin-top: 2em;
+  margin-right: 2em;
+}
+
+#info {
+  font-size: 12px;
+}
+
+#info h1, #info h2 {
+  margin: 0;
+  margin-bottom: 0.1em;
+}
