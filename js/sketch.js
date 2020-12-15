@@ -46,11 +46,13 @@ var s = new SpotifyWebApi()
 var searchList
 var mySong
 var songID = ""
-var ColH
-var ColS
-var ColB
-var radiusSize
-var radiusRatio = 1
+
+var key
+var valence
+var energy
+var loudness
+var tempo
+
 var myInput
 
 function getURLQuery(u) {
@@ -78,10 +80,12 @@ function searchAudioFeatures() {
         //  set mySong to the returned data object (same deal with search data - NEED TO USE FUNCTION)
         mySong = returnData(data)
         //  Set some vars to specific values
-        ColH = songHue[mySong.key]                //  Set KEY to coresponding HUE (See top table)
-        ColS = Math.round(mySong.valence * 100)   //  Set VALENCE to SATURATION (rounded)
-        ColB = Math.round(mySong.energy * 100)    //  Set ENERGY to BRIGHTNESS (rounded)
-        radiusSize = Math.round(mySong.tempo)     //  Set TEMPO to RADIUS (rounded)
+        key = mySong.key
+        valence = mySong.valence
+        energy = mySong.energy
+        loudness = mySong.loudness
+        tempo = mySong.tempo
+
       }
   })
 }
@@ -96,10 +100,11 @@ function searchForSong(myInput) {
   //  If the box is empty, dont search and set some blank vars
   if (myInput == "") {
     songID = ""
-    ColH = 0
-    ColS = 0
-    ColB = 100
-    radiusSize = 0
+    key = 0
+    valence = 0
+    energy = 0
+    tempo = 0;
+    loudness = 0;
   }
   //  Otherwise search Spotify for myInput
   else {
@@ -162,39 +167,5 @@ function setup() {
 
 function draw() {
   background(255)
-  colorMode(HSB)
-  var c = color(ColH, ColS, ColB, 0.5)
-  // strokeWeight(1)
-  // stroke(0, 0, 100)
-  noStroke()
-  fill(c)
-  translate(width/2, height/2)
-  rotate(45)
-  rectMode(RADIUS)
-  angleMode(DEGREES)
-  // Create ring
-  // for (var i =0; i < 40; i++) {
-  //   push()
-  //   rotate(i / 6.35 )
-  //   triangle(0, 0, radiusSize, 0, ColB, 50)
-  //   pop()
-  // }
-  for (var i = 0; i < ColB; i++) {
-    rotate(540 / ColB)
-    rect(0,0, 1, radiusSize - i/2)
-  }
-
-  // randomSeed(Date.now())
-  // var w = random(-15,15)
-  fill(255)
-  ellipse(0, 0, radiusSize*1.1, radiusSize*1.1)
-  fill(c)
-  ellipse(0, 0, radiusSize, radiusSize)
-  // loadImage(albArt, function(img) {
-  //   image(img, 0, 0)
-  // })
-  // background(ColH+30, ColS, ColB, 0.1)
-
-  var cssCol = 'hsl(' + ColH + ',' + ColS + '%,' + ColB + '%)'
-  select("#info").style('color', cssCol)
+  
 }
