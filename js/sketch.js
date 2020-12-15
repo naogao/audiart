@@ -77,7 +77,7 @@ function searchAudioFeatures() {
       else {
         //  set mySong to the returned data object (same deal with search data - NEED TO USE FUNCTION)
         mySong = returnData(data)
-        //  Set some vars to specific values - THE MEAT OF THE PROGRAM
+        //  Set some vars to specific values
         ColH = songHue[mySong.key]                //  Set KEY to coresponding HUE (See top table)
         ColS = Math.round(mySong.valence * 100)   //  Set VALENCE to SATURATION (rounded)
         ColB = Math.round(mySong.energy * 100)    //  Set ENERGY to BRIGHTNESS (rounded)
