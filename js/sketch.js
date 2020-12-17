@@ -190,13 +190,6 @@ let song, analyzer;
 
 // By Roni Kaufman
 
-let kMax;
-let step;
-let n = 250; // number of blobs
-let radius = 80; // diameter of the circle
-let inter = 0.05; // difference between the sizes of two blobs
-let maxNoise = 500;
-
 var sound, amplitude;
 var p = [];
 
@@ -204,7 +197,7 @@ var p = [];
   sound = loadSound('assets/claude.mp3'); 																											//loading song
 }*/
 
-let noiseProg = (x) => (x*x); // not from drawing code
+//let noiseProg = (x) => (x*x); // not from drawing code
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
