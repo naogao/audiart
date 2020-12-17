@@ -201,7 +201,7 @@ var sound, amplitude;
 var p = [];
 
 /*function preload(){
-  sound = loadSound('claude.mp3'); 																											//loading song
+  sound = loadSound('assets/claude.mp3'); 																											//loading song
 }*/
 
 let noiseProg = (x) => (x*x); // not from drawing code
