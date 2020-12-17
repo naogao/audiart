@@ -204,7 +204,7 @@ var p = [];
   sound = loadSound('claude.mp3'); 																											//loading song
 }*/
 
-let noiseProg = (x) => (x*x);
+let noiseProg = (x) => (x*x); // not from drawing code
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
