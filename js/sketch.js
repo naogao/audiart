@@ -175,7 +175,7 @@ function draw() {
 
  // randomSeed(Date.now())
  // var w = random(-15,15)
- fill(0,5);
+ //fill(0,5);
  ellipse(0, 0, radiusSize*1.1, radiusSize*1.1)
  fill(c)
  ellipse(0, 0, radiusSize, radiusSize)
