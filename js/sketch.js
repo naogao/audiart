@@ -154,8 +154,19 @@ function setup() {
 	noCursor();
 	background(0);
 }
-
 function draw() {
+  background(0, 5);
+  colorMode(HSB)
+  var c = color(key, valence, energy, 0.5)
+  // strokeWeight(1)
+  // stroke(0, 0, 100)
+  noStroke()
+  fill(c)
+  translate(width/2, height/2)
+  rotate(45)
+}
+
+/*function draw() {
 	background(0, 5);
 	
   //var spectrum = fft.analyze();
@@ -169,7 +180,7 @@ function draw() {
 	
 	for (var i = 0; i < p.length; i ++) {
 		//Creating a variable to use so that if there are more particles than the samples(1024)
-		/* spectrum will not have an arrayindexoutofbounds error */
+		// spectrum will not have an arrayindexoutofbounds error
 		var freqId = i % 1024;																																					
 		//Created a variable that will use the frequency as the particle's speed
 		var spec = map(spectrum[freqId], 0, 255, 0, 0.01);																							
@@ -179,7 +190,7 @@ function draw() {
 		//If the distance from the position of the particle to it's target destination is less than the size of the amplitude
 		if (dist(p[i].pos.x, p[i].pos.y, p[i].targetPos.x, p[i].targetPos.y) < size) {
 				//Destroy the particle 
-				/*Used for visual and optimisation purposes*/
+				//Used for visual and optimisation purposes
 				p.splice(i, 1);																																							
 		}
 	}
@@ -190,7 +201,7 @@ function draw() {
 	strokeWeight(size);
 	line(pmouseX, pmouseY, mouseX, mouseY);
 	pop();
-}
+}*/
 
 //Analyses the frequency of a song to produce the colour of the song at a particular frame ranging from 0 - 1024
 function colourChoose() {
