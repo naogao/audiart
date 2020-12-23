@@ -1,5 +1,4 @@
 
-//
 var songKey = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 var songHue = [120, 80, 60, 45, 30, 0, 330, 285, 260, 235, 190, 160]
 //  hsl(key, valence, energy)
@@ -8,10 +7,6 @@ var songHue = [120, 80, 60, 45, 30, 0, 330, 285, 260, 235, 190, 160]
 //  energy = 0.578 * 100 = 57.8
 //  = hsl(160, 81.1, 57.8)
 
-//  Colour Picker:
-//  Key = Hue
-//  Valence = Saturation
-//  Energy = Luminance
 //
 //  Tempo = radius
 //  Danceability
