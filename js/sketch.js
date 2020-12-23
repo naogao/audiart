@@ -102,7 +102,7 @@ function searchForSong(myInput) {
          //  Display the song name and artist on the page
          document.getElementById("name").innerHTML = searchList.tracks.items[0].name
          document.getElementById("artist").innerHTML = searchList.tracks.items[0].artists[0].name
-         document.getElementById("test").innerHTML = searchList.tracks.items[0].popularity
+         document.getElementById("test").innerHTML = searchList.tracks.items[0].name
          //  Using that track's ID, grab the Audio Features
          searchAudioFeatures()
          //  Clear the search box
