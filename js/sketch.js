@@ -106,7 +106,7 @@ function searchForSong(myInput) {
          document.getElementById("artist").innerHTML = searchList.tracks.items[0].artists[0].name
 
          //  Using that track's ID, grab the Audio Features
-         searchAudioFeatures()
+         searchAudioFeatures(songID)
          //  Clear the search box
          document.getElementById("searchBox").value = ""
          myInput = ""
@@ -135,6 +135,8 @@ function getCurrentTrack() {
    }
  })
 }
+
+                              /*******DRAW CODE BELOW*******/
 
 
 //Global Variables
