@@ -104,6 +104,7 @@ function searchForSong(myInput) {
          //  Display the song name and artist on the page
          document.getElementById("name").innerHTML = searchList.tracks.items[0].name
          document.getElementById("artist").innerHTML = searchList.tracks.items[0].artists[0].name
+         document.getElementById("test").innerHTML = searchList.tracks.items[0].name
          //  Using that track's ID, grab the Audio Features
          searchAudioFeatures()
          //  Clear the search box
@@ -129,7 +130,11 @@ function getCurrentTrack() {
        searchAudioFeatures(songID)
        document.getElementById("name").innerHTML = searchList.item.name
        document.getElementById("artist").innerHTML = searchList.item.artists[0].name
+<<<<<<< HEAD
        document.getElementById("uri").innerHTML = searchList.item.uri
+=======
+       document.getElementById("test").innerHTML = searchList.item.popularity
+>>>>>>> 97ea51c674bd16d8e6ab26129974418437fa1ea4
      }
    }
  })
@@ -155,6 +160,7 @@ function setup() {
 }
 
 function draw() {
+<<<<<<< HEAD
 	background(0, 5);
 	
 	var spectrum = fft.analyze();
@@ -202,6 +208,37 @@ function colourChoose() {
 		}
 		return specHue;
 }
+=======
+ background(0,5);
+ colorMode(HSB)
+ var c = color(key, valence, energy, 0.5)
+ // strokeWeight(1)
+ // stroke(0, 0, 100)
+ noStroke()
+ fill(c)
+ translate(width/2, height/2)
+ rotate(45)
+ rectMode(RADIUS)
+ angleMode(DEGREES)
+ // Create ring
+ // for (var i =0; i < 40; i++) {
+ //   push()
+ //   rotate(i / 6.35 )
+ //   triangle(0, 0, radiusSize, 0, energy, 50)
+ //   pop()
+ // }
+ for (var i = 0; i < energy; i++) {
+   rotate(540 / energy)
+   rect(0,0, 1, radiusSize - i/2)
+ }
+
+ // randomSeed(Date.now())
+ // var w = random(-15,15)
+ //fill(0,5);
+ ellipse(0, 0, radiusSize*1.1, radiusSize*1.1)
+ fill(c)
+ ellipse(0, 0, radiusSize, radiusSize)
+>>>>>>> 97ea51c674bd16d8e6ab26129974418437fa1ea4
 
 //Particle class
 //col - colour of the particle
