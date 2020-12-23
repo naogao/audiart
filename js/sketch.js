@@ -164,6 +164,7 @@ function draw() {
   fill(c)
   translate(width/2, height/2)
   rotate(45)
+  ellipse(0, 0, 20, 10);
 }
 
 /*function draw() {
