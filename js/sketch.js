@@ -158,7 +158,8 @@ function setup() {
 function draw() {
 	background(0, 5);
 	
-	var spectrum = fft.analyze();
+  //var spectrum = fft.analyze();
+  var spectrum = [0, 1, 2, 3, 100];
 	colorMode(HSB, 512, 1024, 1024, 100);
 	p.push(new Particle(color(colourChoose(), 1024, 1024)));
 	
@@ -193,7 +194,8 @@ function draw() {
 
 //Analyses the frequency of a song to produce the colour of the song at a particular frame ranging from 0 - 1024
 function colourChoose() {
-		var spectrum = fft.analyze();
+    //var spectrum = fft.analyze();
+    var spectrum = [0, 1, 2, 3, 100];
 		var specHue = 0;
 		//Go through all frequency samples and add them to get the total value
 		for (var i = 0; i < spectrum.length; i++) {
