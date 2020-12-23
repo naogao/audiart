@@ -147,10 +147,8 @@ var p = [];						//array of particles
 // }
 
 function setup() {
-	createCanvas(500, 500);
-	//sound.loop();
-  //fft = new p5.FFT();
-	amplitude = new p5.Amplitude();
+  var canvas = createCanvas(500, 500);
+  canvas.parent(mySketch);
 	noCursor();
 	background(0);
 }
