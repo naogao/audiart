@@ -148,7 +148,7 @@ function setup() {
 }
 
 function draw() {
- background(255)
+ background(0,5);
  colorMode(HSB)
  var c = color(key, valence, energy, 0.5)
  // strokeWeight(1)
