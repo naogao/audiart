@@ -127,6 +127,7 @@ function getCurrentTrack() {
        searchAudioFeatures(songID)
        document.getElementById("name").innerHTML = searchList.item.name
        document.getElementById("artist").innerHTML = searchList.item.artists[0].name
+       document.getElementById("test").innerHTML = searchList.item.popularity
      }
    }
  })
