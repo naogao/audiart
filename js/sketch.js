@@ -140,10 +140,19 @@ function getCurrentTrack() {
  })
 }
 
-function setup() {
+/*function setup() {
  var canvas = createCanvas(400,400)
  canvas.parent(mySketch)
 
+}*/
+
+function setup() {
+	createCanvas(windowWidth, windowHeight);
+	//sound.loop();
+  //fft = new p5.FFT();
+	//amplitude = new p5.Amplitude();
+	noCursor();
+	background(0);
 }
 
 function draw() {
