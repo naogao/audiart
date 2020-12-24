@@ -35,6 +35,9 @@ var radiusSize
 var radiusRatio = 1
 var myInput
 
+var beats = [];
+
+
 function getURLQuery(u) {
  var q = window.location.hash.substring(1)
  var v = q.split('&')
@@ -63,10 +66,19 @@ function searchAudioFeatures() {
        key = mySong.key                //  Set KEY to coresponding HUE (See top table)
        valence = mySong.valence   //  Set VALENCE to SATURATION (rounded)
        energy = mySong.energy    //  Set ENERGY to BRIGHTNESS (rounded)
-       amplitude = mySong.amplitude
+       amplitude = mySong.loudness // CHANGED from amplitude to loudness
        radiusSize = mySong.tempo     //  Set TEMPO to RADIUS (rounded)
      }
  })
+}
+
+function searchAudioAnalysis() {
+  s.getAudioAnalysisForTrack(songID, function(err, data) {
+    if(err) console.error(err);
+    else {
+      beats = mySong.beats;
+    }
+  })
 }
 
 function returnData(responseData){
@@ -154,7 +166,7 @@ function setup() {
 	noCursor();
 	background(0);
 }
-function draw() {
+/*function draw() {
   background(0, 5);
   colorMode(HSB)
   var c = color(key, valence, energy, 0.5)
@@ -165,6 +177,42 @@ function draw() {
   translate(width/2, height/2)
   rotate(45)
   ellipse(0, 0, 20, 10);
+}*/
+function draw() {
+	background(0, 5);
+	
+  var spectrum = beats;
+  //var spectrum = [0, 1, 2, 3, 100];
+	colorMode(HSB, 512, 1024, 1024, 100);
+	p.push(new Particle(color(colourChoose(), 1024, 1024)));
+	
+	var level = amplitude.getLevel();
+	//mapping the amplitude from 0 - 1, to 0 - 200 as it'll be used for the size of the brush
+  var size = map(level, 0, 1, 0, 200);																															
+	
+	for (var i = 0; i < p.length; i ++) {
+		//Creating a variable to use so that if there are more particles than the samples(1024)
+		// spectrum will not have an arrayindexoutofbounds error
+		var freqId = i % 1024;																																					
+		//Created a variable that will use the frequency as the particle's speed
+		var spec = map(spectrum[freqId], 0, 255, 0, 0.01);																							
+		p[i].display();
+		p[i].speedFactor = spec;
+		p[i].update();
+		//If the distance from the position of the particle to it's target destination is less than the size of the amplitude
+		if (dist(p[i].pos.x, p[i].pos.y, p[i].targetPos.x, p[i].targetPos.y) < size) {
+				//Destroy the particle 
+				//Used for visual and optimisation purposes
+				p.splice(i, 1);																																							
+		}
+	}
+	
+	//Amplitude Cursor
+	push();
+	stroke(colourChoose(), 1024, 1024, 100);
+	strokeWeight(size);
+	line(pmouseX, pmouseY, mouseX, mouseY);
+  pop();
 }
 
 /*function draw() {
