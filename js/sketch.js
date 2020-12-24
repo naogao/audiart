@@ -152,7 +152,7 @@ function getCurrentTrack() {
 
 
 //Global Variables
-var sound, amplitude; //sound - plays the song, amplitude - accesses amplitude values of sound
+var sound//, amplitude; //sound - plays the song, amplitude - accesses amplitude values of sound
 var p = [];						//array of particles
 
 // function preload(){
