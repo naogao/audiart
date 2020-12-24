@@ -179,7 +179,7 @@ function setup() {
   ellipse(0, 0, 20, 10);
 }*/
 function draw() {
-	background(0, 5);
+	background(255);
 	
   var spectrum = beats;
   //var spectrum = [0, 1, 2, 3, 100];
