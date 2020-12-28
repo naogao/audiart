@@ -121,8 +121,8 @@ function searchForSong(myInput) {
 		 searchAudioFeatures(songID)
 		 searchAudioAnalysis();
          //  Clear the search box
-         document.getElementById("searchBox").value = "test"
-         myInput = ""
+         document.getElementById("searchBox").value = ""
+         myInput = "test"
        }
      }
    })
