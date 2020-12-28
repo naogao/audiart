@@ -177,6 +177,10 @@ function draw() {
   translate(width/2, height/2)
   rotate(45)
   ellipse(0, 0, 20, 10);
+  for(var i = 0; i < beats.length; i++) {
+	var rand = floor(random(0, 100));
+	ellipse(rand, rand, 20, 10);
+  }
 }
 /*function draw() {
 	background(255);
