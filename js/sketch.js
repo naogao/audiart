@@ -1,28 +1,4 @@
 
-var songKey = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-var songHue = [120, 80, 60, 45, 30, 0, 330, 285, 260, 235, 190, 160]
-//  hsl(key, valence, energy)
-//  key = 11 = B = 160
-//  valence = 0.818 * 100 = 81.1
-//  energy = 0.578 * 100 = 57.8
-//  = hsl(160, 81.1, 57.8)
-
-
-//  Tempo = radius
-//  Danceability
-//  Loudness
-//  Mode (Major=1/Minor=0)
-// var authenticateButton = document.getElementById("authenticate").href
-// var auth
-// var authURL = "https://accounts.spotify.com/authorize"
-// var authClient = "?client_id=" + "865f5b5b201c4f16ba15284057e4f26b"
-// var authRType = "&response_type=token"
-// var authRedirect = "&redirect_uri=" + encodeURIComponent("https://adrianfranzese.github.io/P5_plus_Spotify/")
-// // var authRedirect = "&redirect_uri=" + encodeURIComponent("http://0.0.0.0:8000/")
-// var authScope = "&scope=" + "user-read-currently-playing"
-// auth = authURL + authClient + authRType + authRedirect + authScope
-// authenticateButton = authURL + authClient + authRType + authRedirect + authScope
-
 var s = new SpotifyWebApi()
 var searchList
 var mySong
@@ -104,7 +80,6 @@ function searchForSong(myInput) {
          //  Display the song name and artist on the page
          document.getElementById("name").innerHTML = searchList.tracks.items[0].name
          document.getElementById("artist").innerHTML = searchList.tracks.items[0].artists[0].name
-         document.getElementById("test").innerHTML = searchList.tracks.items[0].name
          //  Using that track's ID, grab the Audio Features
          searchAudioFeatures()
          //  Clear the search box
@@ -130,11 +105,7 @@ function getCurrentTrack() {
        searchAudioFeatures(songID)
        document.getElementById("name").innerHTML = searchList.item.name
        document.getElementById("artist").innerHTML = searchList.item.artists[0].name
-<<<<<<< HEAD
-       document.getElementById("uri").innerHTML = searchList.item.uri
-=======
-       document.getElementById("test").innerHTML = searchList.item.popularity
->>>>>>> 97ea51c674bd16d8e6ab26129974418437fa1ea4
+       document.getElementById("name").innerHTML = searchList.item.uri
      }
    }
  })
@@ -160,7 +131,6 @@ function setup() {
 }
 
 function draw() {
-<<<<<<< HEAD
 	background(0, 5);
 	
 	var spectrum = fft.analyze();
@@ -208,37 +178,6 @@ function colourChoose() {
 		}
 		return specHue;
 }
-=======
- background(0,5);
- colorMode(HSB)
- var c = color(key, valence, energy, 0.5)
- // strokeWeight(1)
- // stroke(0, 0, 100)
- noStroke()
- fill(c)
- translate(width/2, height/2)
- rotate(45)
- rectMode(RADIUS)
- angleMode(DEGREES)
- // Create ring
- // for (var i =0; i < 40; i++) {
- //   push()
- //   rotate(i / 6.35 )
- //   triangle(0, 0, radiusSize, 0, energy, 50)
- //   pop()
- // }
- for (var i = 0; i < energy; i++) {
-   rotate(540 / energy)
-   rect(0,0, 1, radiusSize - i/2)
- }
-
- // randomSeed(Date.now())
- // var w = random(-15,15)
- //fill(0,5);
- ellipse(0, 0, radiusSize*1.1, radiusSize*1.1)
- fill(c)
- ellipse(0, 0, radiusSize, radiusSize)
->>>>>>> 97ea51c674bd16d8e6ab26129974418437fa1ea4
 
 //Particle class
 //col - colour of the particle
