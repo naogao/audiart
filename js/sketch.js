@@ -166,7 +166,7 @@ function setup() {
 	noCursor();
 	background(0);
 }
-/*function draw() {
+function draw() {
   background(0, 5);
   colorMode(HSB)
   var c = color(key, valence, energy, 0.5)
@@ -177,8 +177,8 @@ function setup() {
   translate(width/2, height/2)
   rotate(45)
   ellipse(0, 0, 20, 10);
-}*/
-function draw() {
+}
+/*function draw() {
 	background(255);
 	
   var spectrum = beats;
@@ -213,7 +213,7 @@ function draw() {
 	strokeWeight(size);
 	line(pmouseX, pmouseY, mouseX, mouseY);
   pop();
-}
+}*/
 
 /*function draw() {
 	background(0, 5);
