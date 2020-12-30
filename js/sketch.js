@@ -58,13 +58,15 @@ else {
 
 function searchAudioFeatures() {
  s.getAudioFeaturesForTrack(songID, function(err, data) {
-     if (err) console.error(err)
+     if (err) {
+		console.error(err)//TODO: Debug shows reaching error
+	 }
      else {
        //  set mySong to the returned data object (same deal with search data - NEED TO USE FUNCTION)
        mySong = returnData(data)
     
        key = mySong.key                //  Set KEY to coresponding HUE (See top table)
-       valence = mySong.valence   //  Set VALENCE to SATURATION (rounded)
+	   valence = mySong.valence   //  Set VALENCE to SATURATION (rounded)
        energy = mySong.energy    //  Set ENERGY to BRIGHTNESS (rounded)
        amplitude = mySong.loudness // CHANGED from amplitude to loudness
        radiusSize = mySong.tempo     //  Set TEMPO to RADIUS (rounded)
@@ -74,7 +76,9 @@ function searchAudioFeatures() {
 
 function searchAudioAnalysis() {
   s.getAudioAnalysisForTrack(songID, function(err, data) {
-    if(err) console.error(err);
+    if(err) {
+	  console.error(err); //TODO: Debug shows reaching error
+	}
     else {
       beats = mySong.beats;
     }
@@ -100,7 +104,9 @@ function searchForSong(myInput) {
  else {
    s.searchTracks(myInput, function(err, data) {
      //  If there's an error, throw an error
-     if (err) console.error(err)
+     if (err) {
+		console.error(err);
+	 } 
      //  Otherwise continue as planned
      else {
        searchList = returnData(data)
@@ -114,12 +120,14 @@ function searchForSong(myInput) {
          //  Grab the first track's Spotify ID
          songID = searchList.tracks.items[0].id
          //  Display the song name and artist on the page
-         document.getElementById("name").innerHTML = searchList.tracks.items[0].name
+		 document.getElementById("name").innerHTML = searchList.tracks.items[0].name
+		// document.getElementById("name").innerHTML = "This is a test";
          document.getElementById("artist").innerHTML = searchList.tracks.items[0].artists[0].name
-		 document.getElementById("test").innerHTML = searchList.tracks.items[0].name
+		 //document.getElementById("test").innerHTML = searchList.tracks.items[0].
          //  Using that track's ID, grab the Audio Features
-		 searchAudioFeatures(songID)
+		 searchAudioFeatures(songID);
 		 searchAudioAnalysis();
+		 document.getElementById("test").innerHTML = searchList.tracks.items[0].popularity
          //  Clear the search box
          document.getElementById("searchBox").value = "";
 		 myInput = ""
@@ -172,18 +180,19 @@ function draw() {
   background(0, 5);
   colorMode(HSB)
   var c = color(key, valence, energy, 0.5)
-  // strokeWeight(1)
-  // stroke(0, 0, 100)
+  strokeWeight(1)
+  stroke(0, 0, 100)
   noStroke()
   fill(c)
   translate(width/2, height/2)
   rotate(45)
-  ellipse(0, 0, 20, 10);
+  ellipse(0, 0, 40, 10);
   for(var i = 0; i < beats.length; i++) {
 	var rand = floor(random(0, 100));
 	ellipse(rand, rand, 20, 10);
   }
 }
+
 /*function draw() {
 	background(255);
 	

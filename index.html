@@ -19,17 +19,18 @@
       <button id="currentTrack" onclick="getCurrentTrack()">Get currently playing</button>
     </header>
 
-    <section id="mySketch"></section>
-
+   <!--<section id="mySketch"></section>-->
+<!--notes: for some reason debug/code doesn't work once u hit the authorize button. also sketch.js is reaching error on both audio functions-->
     <section id="info">
       <h1 id="name"></h1>
       <h2 id="artist"></h2>
       <h1 id="test"></h1>
 
     </section>
+    <section id="mySketch"></section>
     <script type="text/javascript">
-      authURL = "https://accounts.spotify.com/authorize?client_id=128504fd07d845b780479d7855623841&response_type=token&scope=user-read-currently-playing"
-      authRedirect = "&redirect_uri=" + encodeURIComponent("https://naogao.github.io/audiart/")
+      var authURL = "https://accounts.spotify.com/authorize?client_id=128504fd07d845b780479d7855623841&response_type=token&scope=user-read-currently-playing"
+      var authRedirect = "&redirect_uri=" + encodeURIComponent("https://naogao.github.io/audiart/")
    
      //var authURL = "https://accounts.spotify.com/authorize?client_id=865f5b5b201c4f16ba15284057e4f26b&response_type=token&scope=user-read-currently-playing"
      //var authRedirect = "&redirect_uri=" + encodeURIComponent("https://adrianfranzese.github.io/P5_plus_Spotify/")
