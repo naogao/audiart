@@ -150,8 +150,6 @@ function setup() {
 	background(0);
 }
 function draw() {
-<<<<<<< HEAD
-=======
   background(0, 5);
   colorMode(HSB)
   var c = color(key, valence, energy, 0.5)
