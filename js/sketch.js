@@ -92,10 +92,6 @@ function searchForSong(myInput) {
          //  Display the song name and artist on the page
          document.getElementById("name").innerHTML = searchList.tracks.items[0].name
          document.getElementById("artist").innerHTML = searchList.tracks.items[0].artists[0].name
-<<<<<<< HEAD
-=======
-
->>>>>>> 9cc2fe94a1c5f4bb1217d328a235a4c90e057dab
          //  Using that track's ID, grab the Audio Features
          searchAudioFeatures(songID)
          //  Clear the search box
@@ -121,11 +117,6 @@ function getCurrentTrack() {
        searchAudioFeatures(songID)
        document.getElementById("name").innerHTML = searchList.item.name
        document.getElementById("artist").innerHTML = searchList.item.artists[0].name
-<<<<<<< HEAD
-       document.getElementById("name").innerHTML = searchList.item.uri
-=======
-
->>>>>>> 9cc2fe94a1c5f4bb1217d328a235a4c90e057dab
      }
    }
  })
